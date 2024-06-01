@@ -34,7 +34,7 @@
         };
 
         const response = await axios.post(
-          "http://localhost:3000/destinations",
+          "https://json-server-f2uz.onrender.com/destinations",
           newDestination
         );
         console.log("added successfully");
@@ -43,14 +43,14 @@
 
       getDestinations();
       async function getDestinations() {
-        const response = await axios.get("http://localhost:3000/destinations");
+        const response = await axios.get("https://json-server-f2uz.onrender.com/destinations");
         myDestinations = response.data;
         displayDestinations();
       }
 
 
       async function deleteDestinations(id) {
-        const response = await axios.delete(`http://localhost:3000/destinations/${id}`);
+        const response = await axios.delete(`https://json-server-f2uz.onrender.com/destinations/${id}`);
         myDestinations = response.data;
         displayDestinations();
       }
@@ -62,7 +62,7 @@
         description: newDescription.value,
         image: newImage.value
         };
-        const response = await axios.patch(`http://localhost:3000/destinations/${id}`, updatedDestination);
+        const response = await axios.patch(`https://json-server-f2uz.onrender.com/destinations/${id}`, updatedDestination);
         myDestinations = response.data;
 
   };
